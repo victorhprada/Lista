@@ -8,65 +8,32 @@
     </head>
     <body>
         <?php
-        $usuario1 = [
-            'Nome' => 'Victor',
-            'E-mail' => 'victor@teste',
-            'Idade' => '21'
-        ];
 
-        $usuario2 = [
-            'Nome' => 'Ronaldo',
-            'E-mail' => 'ronaldo@teste',
-            'Idade' => '30'
-        ];
+        $usuarios = array(
+            array("nome" => 'victor', "email" => "victor@teste", "idade" => "21"), 
+            array("nome" => 'ronaldo', "email" => "ronaldo@teste", "idade" => "30"), 
+            array("nome" => 'mariana', "email" => "mari@teste", "idade" => "22"), 
+            array("nome" => 'luiz', "email" => "luiz@teste", "idade" => "56"),
+        );
 
-        $usuario3 = [
-            'Nome' => 'Mariana',
-            'E-mail' => 'mariana@teste',
-            'Idade' => '22'
-        ];
-
-        $usuario4 = [
-            'Nome' => 'Luiz',
-            'E-mail' => 'luiz@teste',
-            'Idade' => '56'
-        ];
-
-        $contasUsuarios = [$usuario1, $usuario2, $usuario3, $usuario4];
-
-        /*foreach($contasUsuarios as $usuario) {
-            echo $usuario['Nome'];
-        }*/
+        
         ?>
         <table>
             <thead>
                 <tr>
-                    <th>Nome</th>
+                <?php 
+                    foreach($usuarios as $usuario) {
+                        echo implode(",", $usuario) . "\n";
+                    }
+                    ?>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
-                    <?php 
-                    foreach($contasUsuarios as $usuario){
-                        echo $usuario['Nome'] . PHP_EOL;
-                    }
-                    ?></td>
-                    <th>E-mail:</th>
-                    <td>
-                    <?php 
-                    foreach($contasUsuarios as $usuario){
-                        echo $usuario['E-mail'] . PHP_EOL;
-                    }
-                    ?></td>
+                    
+                    
                     </td>
-                    <th>Idade:</th>
-                    <td>
-                    <?php 
-                    foreach($contasUsuarios as $usuario){
-                        echo $usuario['Idade'] . PHP_EOL;
-                    }
-                    ?></td>
 
                 </tr>
             </tbody>
